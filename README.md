@@ -1,6 +1,6 @@
-# Setup SonarQube for a Node.js project with Github Action
+# Setup SonarCloud for a Node.js project with Github Action
 
-> This sample app demonstrate how to set up SonarQube with GitHub Actions for a Node.js project
+> This sample app demonstrate how to set up SonarCloud with GitHub Actions for a Node.js project
 
 
 ## 🛠 Basic Set up - step by step
