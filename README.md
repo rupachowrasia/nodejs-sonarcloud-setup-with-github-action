@@ -1,18 +1,20 @@
-# Setup SonarCloud for a Node.js project with Github Action
+# Setup SonarQube for a Node.js project with Github Action
 
-> This sample app demonstrate how to set up SonarCloud with GitHub Actions for a Node.js project
+> This sample app demonstrate how to set up SonarQube with GitHub Actions for a Node.js project
 
 
-## 🛠 Basic Set up - step by step
+## 🛠 Basic Setup - step by step
 
-- You should have a SonarQube server (self-hosted) OR you can use SonarCloud https://www.sonarsource.com/products/sonarcloud/
+- You should have a SonarQube server (self-hosted) OR you can use SonarCloud https://www.sonarsource.com/products/sonarcloud/ [Here in this repo we will be using sonarcloud]
 - Sign in with GitHub
 - After login create SonarQube Token: In SonarQube UI → My Account → Security → Generate Token
-- Import your org/repository
+- Import your organization / repository
 - Create a new project — choose automatic GitHub-based setup if available
 - Add the token in GitHub repo: ➔ GitHub → Settings → Secrets and variables → Actions → New Repository Secret:
   -   Name: SONAR_TOKEN
   -   value: your generated token
+  -   Name: SONAR_HOST_URL
+  -   value: use https://your-sonarqube-server.com if using sonarqube or else use https://sonarcloud.io for sonarcloud
 - Create a file called sonar-project.properties and keep it in root of project:
   ```bash
     sonar.projectKey=<YOUR_REPO_NAME>
@@ -23,9 +25,6 @@
   ```
   This tells SonarScanner how to scan your project.
 - Add GitHub Action Workflow (.github/workflows/sonarqube.yml): code is provided in the Repo.
-- Note:
-    - If you use SonarCloud, then SONAR_HOST_URL=https://sonarcloud.io
-    - sonar-project.properties must be in the project.
 
 ## 🔥 How does it work?
 - Code is pushed or PR created
