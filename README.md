@@ -17,7 +17,7 @@
   -   value: use https://your-sonarqube-server.com if using sonarqube or else use https://sonarcloud.io for sonarcloud
 - Create a file called sonar-project.properties and keep it in root of project:
   ```bash
-    sonar.projectKey=<YOUR_REPO_NAME>
+    sonar.projectKey=<YOUR_PROJECT_KEY>
     sonar.organization=<YOUR_ORG_NAME>
     sonar.host.url=https://sonarcloud.io
     sonar.sources=.
@@ -27,10 +27,7 @@
 - Add GitHub Action Workflow (.github/workflows/sonarqube.yml): code is provided in the Repo.
 
 ## 🔥 How does it work?
-- Code is pushed or PR created
-- GitHub Action runs
-- SonarQube scanner checks your code
-- SonarQube dashboard updated with report
+- Whenever your code is pushed or a PR is created, GitHub Action runs, SonarQube scanner checks your code and update SonarQube dashboard with report
 
 ## 📦 Installation
 
