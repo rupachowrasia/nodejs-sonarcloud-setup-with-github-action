@@ -2,8 +2,8 @@ name: SonarQube Scan
 
 on:
   push:
-    branches:
-      - main
+    # branches:
+    #   - main
   pull_request:
     types: [opened, synchronize, reopened]
 
@@ -30,3 +30,9 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           # use https://your-sonarqube-server.com if using sonarqube or else use https://sonarcloud.io for sonarcloud
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
+      - name: Quality Gate Check
+        uses: SonarSource/sonarqube-quality-gate-action@v1.1.0
+        timeout-minutes: 5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
