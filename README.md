@@ -1,14 +1,17 @@
 # Setup SonarCloud for a Node.js project with Github Action
 
-> This sample app demonstrate how to set up SonarCloud with GitHub Actions for a Node.js project
+> This sample app demonstrate how to set up SonarCloud with GitHub Actions for a Node.js project.
 > We use SonarQube to automated code quality + security checker. It saves you from bad code, bugs, and vulnerabilities.
 
+## 📢 SonarQube vs SonarCloud
+- SonarQube: Self-hosted (you install it), Full control, Free Community Edition available
+- SonarCloud: Cloud-hosted (SaaS), Easy setup, Free for open source projects
 
 ## 🛠 Basic Setup - step by step
 
 - You should have a SonarQube server (self-hosted) OR you can use SonarCloud https://www.sonarsource.com/products/sonarcloud/ [Here in this repo we will be using SonarCloud]
 - Sign in with GitHub
-- After login create SonarQube Token: In SonarQube UI → My Account → Security → Generate Token
+- After login create SonarQube Token: → My Account → Security → Generate Token
 - Import your organization / repository
 - Create a new project — choose automatic GitHub-based setup if available
 - Add the token in GitHub repo: ➔ GitHub → Settings → Secrets and variables → Actions → New Repository Secret:
@@ -27,9 +30,12 @@
   This tells SonarScanner how to scan your project.
 - Add GitHub Action Workflow (.github/workflows/sonarcloud.yml): code is provided in the Repo.
 
-## 📢 SonarQube vs SonarCloud
-- SonarQube: Self-hosted (you install it), Full control, Free Community Edition available
-- SonarCloud: Cloud-hosted (SaaS), Easy setup, Free for open source projects
+## ⚡ Custom Quality Gates
+- In SonarQube UI → Administration → Quality Gates → create your own rules, like:
+    - Coverage > 80%
+    - 0 Bugs
+    - 0 Critical Security Hotspots
+- Your PRs will only pass if they meet this standard!
 
 ## 🔥 How does it work?
 - Whenever your code is pushed or a PR is created, GitHub Action runs, SonarQube scanner checks your code and update SonarQube dashboard with report
