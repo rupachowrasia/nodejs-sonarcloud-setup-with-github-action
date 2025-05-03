@@ -31,7 +31,7 @@
 - Add GitHub Action Workflow (.github/workflows/sonarcloud.yml): code is provided in the Repo.
 
 ## ⚡ Custom Quality Gates
-- In SonarQube UI → Administration → Quality Gates → create your own rules, like:
+- In SonarCloud UI → Go to your project → Administration → Quality Gates → create your own rules, like:
     - Coverage > 80%
     - 0 Bugs
     - 0 Critical Security Hotspots
