@@ -1,11 +1,11 @@
-# Setup SonarQube for a Node.js project with Github Action
+# Setup SonarCloud for a Node.js project with Github Action
 
-> This sample app demonstrate how to set up SonarQube with GitHub Actions for a Node.js project
+> This sample app demonstrate how to set up SonarCloud with GitHub Actions for a Node.js project
 
 
 ## 🛠 Basic Setup - step by step
 
-- You should have a SonarQube server (self-hosted) OR you can use SonarCloud https://www.sonarsource.com/products/sonarcloud/ [Here in this repo we will be using sonarcloud]
+- You should have a SonarQube server (self-hosted) OR you can use SonarCloud https://www.sonarsource.com/products/sonarcloud/ [Here in this repo we will be using SonarCloud]
 - Sign in with GitHub
 - After login create SonarQube Token: In SonarQube UI → My Account → Security → Generate Token
 - Import your organization / repository
@@ -14,7 +14,7 @@
   -   Name: SONAR_TOKEN
   -   value: your generated token
   -   Name: SONAR_HOST_URL
-  -   value: use https://your-sonarqube-server.com if using sonarqube or else use https://sonarcloud.io for sonarcloud
+  -   value: use https://your-sonarqube-server.com if using SonarQube or else use https://sonarcloud.io for SonarCloud
 - Create a file called sonar-project.properties and keep it in root of project:
   ```bash
     sonar.projectKey=<YOUR_PROJECT_KEY>
@@ -24,7 +24,7 @@
     sonar.language=js
   ```
   This tells SonarScanner how to scan your project.
-- Add GitHub Action Workflow (.github/workflows/sonarqube.yml): code is provided in the Repo.
+- Add GitHub Action Workflow (.github/workflows/sonarcloud.yml): code is provided in the Repo.
 
 ## 🔥 How does it work?
 - Whenever your code is pushed or a PR is created, GitHub Action runs, SonarQube scanner checks your code and update SonarQube dashboard with report
@@ -33,10 +33,10 @@
 
 ```bash
 # Clone the repo
-git clone https://github.com/rupachowrasia/nodejs-sonarqube-setup-with-github-action.git
+git clone https://github.com/rupachowrasia/nodejs-sonarcloud-setup-with-github-action.git
 
 # Move into the project directory
-cd nodejs-sonarqube-setup-with-github-action
+cd nodejs-sonarcloud-setup-with-github-action
 
 # Install dependencies
 npm install
