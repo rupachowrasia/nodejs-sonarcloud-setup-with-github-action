@@ -1,6 +1,7 @@
 # Setup SonarCloud for a Node.js project with Github Action
 
 > This sample app demonstrate how to set up SonarCloud with GitHub Actions for a Node.js project
+> We use SonarQube to automated code quality + security checker. It saves you from bad code, bugs, and vulnerabilities.
 
 
 ## 🛠 Basic Setup - step by step
@@ -18,13 +19,17 @@
 - Create a file called sonar-project.properties and keep it in root of project:
   ```bash
     sonar.projectKey=<YOUR_PROJECT_KEY>
-    sonar.organization=<YOUR_ORG_NAME>
+    sonar.organization=<YOUR_ORG_NAME> // (only for SonarCloud)
     sonar.host.url=https://sonarcloud.io
     sonar.sources=.
     sonar.language=js
   ```
   This tells SonarScanner how to scan your project.
 - Add GitHub Action Workflow (.github/workflows/sonarcloud.yml): code is provided in the Repo.
+
+## 📢 SonarQube vs SonarCloud
+- SonarQube: Self-hosted (you install it), Full control, Free Community Edition available
+- SonarCloud: Cloud-hosted (SaaS), Easy setup, Free for open source projects
 
 ## 🔥 How does it work?
 - Whenever your code is pushed or a PR is created, GitHub Action runs, SonarQube scanner checks your code and update SonarQube dashboard with report
